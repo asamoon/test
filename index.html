@@ -1,13 +1,195 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>test</title>
-  <script src="./js/test.js" type="text/javascript" charset="utf-8"></script>
-  <!-- <link rel="stylesheet" href=""> -->
-</head>
-<body>
-  <h1>TEST</h1>
-</body>
+<!--[if IE]><html lang="zh-TW"><![endif]-->
+<!--[if !IE]>--><html lang="zh-cmn-Hant-TW"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>TEST</title>
+
+    <!-- meta -->
+    <!-- Meta tags -->
+    <meta name="full-screen" content="yes">
+    <meta name="x5-page-mode" content="app">
+    <meta name="format-detection" content="telephone=no, email=no">
+
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Web Application Manifest -->
+    <!-- <link rel="manifest" href="static/manifest.json"> -->
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Web Starter Kit">
+    <!-- <link rel="icon" sizes="192x192" href="imgs/touch/chrome-touch-icon-192x192.png"> -->
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
+    <!-- <link rel="apple-touch-icon" href="imgs/touch/apple-touch-icon.png"> -->
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <!-- <meta name="msapplication-TileImage" content="imgs/touch/ms-touch-icon-144x144-precomposed.png"> -->
+    <meta name="msapplication-TileColor" content="#00A2E4">
+
+    <!-- Color the status bar on mobile devices -->
+    <meta name="theme-color" content="#00A2E4">
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+
+    <!-- stylesheets -->
+    <!-- <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"> -->
+    <!-- <link rel="icon" href="/favicon.ico" type="image/x-icon"> -->
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <script src="js/anime.min.js"></script>
+    <script src="js/svg.min.js"></script>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <noscript>
+      <div class="notifyBox noscriptNotify">
+        <h1 class="notifyBox__title">啟用瀏覽器的 JavaScript</h1>
+        <div class="notifyBox__content">
+          <p>您的瀏覽器必須啟用 JavaScript，才能正常使用瀏覽本站。</p>
+          <p>如果使用瀏覽器瀏覽本站時遇到任何問題，請檢查瀏覽器是否已開啟 JavaScript。</p>
+        </div>
+      </div><!-- ======================== JavaScript 停用警告 end ======================== -->
+    </noscript>
+
+    <div class="root">
+        <div class="site-header">
+  <div class="inner-wrap">
+    <h1>
+      <a href="/">Test Labs</a>
+    </h1>
+  </div>
+</div>
+
+        
+        
+        
+        
+        
+
+<main id="app">
+  <div class="inner-wrap">
+    <h2>svg</h2>
+    <div id="drawing" @click="boom">
+      <div class="targetX"></div>
+    </div>
+  </div>
+</main>
+
+
+<script>
+
+
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    el: [],
+    ripple: [],
+    targetX: [],
+    bgColor: '#eee',
+    spark: {},
+    animations: [],
+    isClick: false,
+    isShow: false
+  },
+  mounted () {
+    let draw = SVG('drawing')
+    this.el = draw.circle(0).fill('#0f0').x(300).y(300)
+    this.ripple = draw.circle(0).fill({ opacity: 0 }).stroke({ color: '#0f0', opacity: 0.5, width: 10 }).x(300).y(300)
+    this.targetX = document.querySelector('.targetX')
+    console.log(this.targetX.pageX)
+  },
+  methods: {
+    boom () {
+      var rippleAnimation = anime({
+        targets: this.ripple.node,
+        r: 300,
+        opacity: 0,
+        easing: 'easeOutExpo',
+        duration: 1500,
+        complete: () => {
+          // fillAnimation.restart()
+        }
+      })
+
+      var fillAnimation = anime({
+        targets: this.el.node,
+        r: 300,
+        duration:  500,
+        opacity: [1, 0],
+        easing: 'easeOutQuart',
+        complete: () => {
+          // fillAnimation.restart()
+          // console.log(anime.list);
+          // this.bgColor = '#0f0'
+          // this.removeAnimation(fillAnimation)
+        }
+      })
+      // this.animations.push(fillAnimation, rippleAnimation)
+    },
+    removeAnimation(animation) {
+      console.log('removeAnimation', animation);
+      var index = this.animations.indexOf(animation)
+      if (index > -1) this.animations.splice(index, 1)
+    }
+  }
+});
+</script>
+
+<style>
+#drawing {
+  background: #eee;
+  position: relative;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+#drawing svg {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+.targetX {
+  background: #000;
+  position: absolute;
+  z-index: 99;
+  top: 200px;
+  left: 200px;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+}
+</style>
+
+        
+    </div><!-- ======================== app end ======================== -->
+
+    <!-- Old Browser Warning --><!--[if lt IE 11]>
+    <div class="old-browser-warning">
+      <div class="old-browser-warning__inner">
+        <h2>FOR A FASTER, BETTER, AND SAFER WEB EXPERIENCE, KEEP YOUR BROWSER UP TO DATE.</h2>
+        <p>親愛的用戶你好：</p>
+        <p>如果您看到了本訊息，表示您使用了過於舊版的瀏覽器進入本站。</p>
+        <p>為了使用本站的完整功能，讓您感受更佳的瀏覽體驗，<br />建議升級至瀏覽器的最新版本，以維持最佳瀏覽品質！</p>
+        <div class="old-browser-warning__btnBox">
+          <a class="btn-o btn-large" href="http://www.whatbrowser.org/intl/zh-TW/" target="_blank">升級瀏覽器&nbsp;&#10132;</a>
+        </div>
+      </div>
+    </div><![endif]-->
+
+
+    <!-- <script src="js/vendor/jquery.3.1.1.min.js"></script> -->
+  </body>
 </html>
+
