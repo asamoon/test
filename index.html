@@ -72,106 +72,80 @@
   </div>
 </div>
 
-        
-        
-        
-        
-        
+        <main id="app" v-cloak>
 
-<main id="app">
-  <div class="inner-wrap">
-    <h2>svg</h2>
-    <div id="drawing" @click="boom">
-      <div class="targetX"></div>
+
+<div class="inner-wrap">
+  <p>Click the button to see it expanding into a fullscreen overlay:</p>
+
+  <div class="fo" :class="{ show: isShow }">
+    <button class="fo__btn" type="button" @click.self.stop="slideToggle" :disabled="isClick">MORE INFO</button>
+    <!-- button -->
+    <div class="fo__content" :style="`top: ${posTop}px; left: ${posLeft}px;`">
+      <div class="inner-wrap">
+        <i class="closeIt material-icons" @click.stop="slideToggle">close</i>
+        <!-- close -->
+        <h2>About Parsley</h2>
+        <p>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</p>
+        <p>Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradish spinach carrot soko. Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard seakale pumpkin onion chickpea gram corn pea. Brussels sprout coriander water chestnut gourd swiss chard wakame kohlrabi beetroot carrot watercress. Corn amaranth salsify bunya nuts nori azuki bean chickweed potato bell pepper artichoke.</p>
+        <p>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</p>
+        <p>Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradish spinach carrot soko. Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard seakale pumpkin onion chickpea gram corn pea. Brussels sprout coriander water chestnut gourd swiss chard wakame kohlrabi beetroot carrot watercress. Corn amaranth salsify bunya nuts nori azuki bean chickweed potato bell pepper artichoke.</p>
+        <p>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</p>
+        <p>Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradish spinach carrot soko. Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard seakale pumpkin onion chickpea gram corn pea. Brussels sprout coriander water chestnut gourd swiss chard wakame kohlrabi beetroot carrot watercress. Corn amaranth salsify bunya nuts nori azuki bean chickweed potato bell pepper artichoke.</p><p>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</p>
+        <p>Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradish spinach carrot soko. Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard seakale pumpkin onion chickpea gram corn pea. Brussels sprout coriander water chestnut gourd swiss chard wakame kohlrabi beetroot carrot watercress. Corn amaranth salsify bunya nuts nori azuki bean chickweed potato bell pepper artichoke.</p>
+        <p>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</p>
+        <p>Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradish spinach carrot soko. Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard seakale pumpkin onion chickpea gram corn pea. Brussels sprout coriander water chestnut gourd swiss chard wakame kohlrabi beetroot carrot watercress. Corn amaranth salsify bunya nuts nori azuki bean chickweed potato bell pepper artichoke.</p>
+        <p>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</p>
+        <p>Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradish spinach carrot soko. Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard seakale pumpkin onion chickpea gram corn pea. Brussels sprout coriander water chestnut gourd swiss chard wakame kohlrabi beetroot carrot watercress. Corn amaranth salsify bunya nuts nori azuki bean chickweed potato bell pepper artichoke.</p><p>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</p>
+        <p>Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradish spinach carrot soko. Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard seakale pumpkin onion chickpea gram corn pea. Brussels sprout coriander water chestnut gourd swiss chard wakame kohlrabi beetroot carrot watercress. Corn amaranth salsify bunya nuts nori azuki bean chickweed potato bell pepper artichoke.</p>
+        <p>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</p>
+        <p>Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradish spinach carrot soko. Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard seakale pumpkin onion chickpea gram corn pea. Brussels sprout coriander water chestnut gourd swiss chard wakame kohlrabi beetroot carrot watercress. Corn amaranth salsify bunya nuts nori azuki bean chickweed potato bell pepper artichoke.</p>
+        <p>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</p>
+        <p>Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradish spinach carrot soko. Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard seakale pumpkin onion chickpea gram corn pea. Brussels sprout coriander water chestnut gourd swiss chard wakame kohlrabi beetroot carrot watercress. Corn amaranth salsify bunya nuts nori azuki bean chickweed potato bell pepper artichoke.</p>
+      </div>
     </div>
+    <!-- content -->
   </div>
+  <!-- fo -->
+
+  <p>Pea horseradish azuki bean lettuce avocado asparagus okra. Kohlrabi radish okra azuki bean corn fava bean mustard tigernut juccama green bean celtuce collard greens avocado quandong fennel gumbo black-eyed pea. Grape silver beet watercress potato tigernut corn groundnut. Chickweed okra pea winter purslane coriander yarrow sweet pepper radish garlic brussels sprout groundnut summer purslane earthnut pea tomato spring onion azuki bean gourd. Gumbo kakadu plum komatsuna black-eyed pea green bean zucchini gourd winter purslane silver beet rock melon radish asparagus spinach.</p>
+</div>
 </main>
 
-
-<script>
-
-
-
+<script type="text/javascript">
 var app = new Vue({
   el: '#app',
   data: {
-    el: [],
-    ripple: [],
-    targetX: [],
-    bgColor: '#eee',
-    spark: {},
-    animations: [],
+    posTop: 0,
+    posLeft: 0,
     isClick: false,
     isShow: false
   },
-  mounted () {
-    let draw = SVG('drawing')
-    this.el = draw.circle(0).fill('#0f0').x(300).y(300)
-    this.ripple = draw.circle(0).fill({ opacity: 0 }).stroke({ color: '#0f0', opacity: 0.5, width: 10 }).x(300).y(300)
-    this.targetX = document.querySelector('.targetX')
-    console.log(this.targetX.pageX)
-  },
   methods: {
-    boom () {
-      var rippleAnimation = anime({
-        targets: this.ripple.node,
-        r: 300,
-        opacity: 0,
-        easing: 'easeOutExpo',
-        duration: 1500,
-        complete: () => {
-          // fillAnimation.restart()
-        }
-      })
+    slideToggle (e) {
+      if (e.currentTarget.nodeName === 'BUTTON') {
+        this.posTop = e.target.getBoundingClientRect().top
+        this.posLeft = e.target.getBoundingClientRect().left
+        // 防止短時間内重複觸發
+        this.isClick = !this.isClick
+      } else {
+        this.isClick = !this.isClick
+      }
 
-      var fillAnimation = anime({
-        targets: this.el.node,
-        r: 300,
-        duration:  500,
-        opacity: [1, 0],
-        easing: 'easeOutQuart',
-        complete: () => {
-          // fillAnimation.restart()
-          // console.log(anime.list);
-          // this.bgColor = '#0f0'
-          // this.removeAnimation(fillAnimation)
-        }
-      })
-      // this.animations.push(fillAnimation, rippleAnimation)
-    },
-    removeAnimation(animation) {
-      console.log('removeAnimation', animation);
-      var index = this.animations.indexOf(animation)
-      if (index > -1) this.animations.splice(index, 1)
+      setTimeout(() => {
+        this.isShow = !this.isShow
+      }, 200)
+
+      // console.log(e.target.getBoundingClientRect())
     }
   }
-});
+})
 </script>
 
-<style>
-#drawing {
-  background: #eee;
-  position: relative;
-  min-height: 100vh;
-  min-width: 100vw;
-}
-#drawing svg {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-}
-.targetX {
-  background: #000;
-  position: absolute;
-  z-index: 99;
-  top: 200px;
-  left: 200px;
-  width: 30px;
-  height: 30px;
-  border-radius: 30px;
-}
-</style>
-
+        
+        
+        
+        
         
     </div><!-- ======================== app end ======================== -->
 
