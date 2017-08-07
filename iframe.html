@@ -17,14 +17,16 @@ window.onload = function () {
   iframe.id = 'vote__side-box';
   document.getElementById('rightArea').append(iframe);
 
-setTimeout(function () {
-  window.onmessage = function (e) {
-    console.log(e.data);
-    iframe.height = e.data;
-  };
-  
-  iframe.contentWindow.postMessage('', '*');
-}, 1200);
+  setTimeout(function () {
+    var iii = document.getElementById('vote__side')
+    console.log('set===');
+    window.onmessage = function (e) {
+      console.log(e.data);
+      iii.height = e.data;
+    };
+    
+    iii.contentWindow.postMessage('', '*');
+  }, 1200);
 };
 </script>
 
