@@ -140,6 +140,23 @@ var app = new Vue({
     }
   }
 })
+
+
+window.onload = function() {
+  var iframe = document.createElement('iframe');
+  // iframe.style.display = "none";
+  iframe.src = 'https://vote.yam.com/inset';
+  iframe.frameBorder = 0;
+  iframe.scrolling = 'no';
+  iframe.id = 'vote__side-box';
+  document.getElementById('rightArea').prepend(iframe);
+
+  window.onmessage = function(e) {
+    console.log(e.data);
+    iframe.height = e.data
+  }
+  iframe.contentWindow.postMessage('','https://vote.yam.com');
+};
 </script>
 
         
