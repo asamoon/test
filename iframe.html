@@ -14,6 +14,7 @@ window.onload = function () {
   iframe.src = 'https://vote.yam.com/inset';
   iframe.frameBorder = 0;
   iframe.scrolling = 'no';
+  iframe.height = 150;
   iframe.id = 'vote__side-box';
   document.getElementById('rightArea').append(iframe);
 
@@ -26,7 +27,7 @@ window.onload = function () {
     };
     
     iii.contentWindow.postMessage('', '*');
-  }, 2200);
+  }, 1500);
 };
 </script>
 
