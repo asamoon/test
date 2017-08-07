@@ -22,13 +22,14 @@ function once(fn) {
 
 
 window.onload = function() {
-  var loadIfm = once(function () {
-    var iframe = document.createElement('iframe');
-    iframe.src = 'https://vote.yam.com/inset';
-    iframe.frameBorder = 0;
-    iframe.scrolling = 'no';
-    iframe.id = 'vote__side-box';
+  var iframe = document.createElement('iframe');
+  iframe.src = 'https://vote.yam.com/inset';
+  iframe.frameBorder = 0;
+  iframe.scrolling = 'no';
+  iframe.id = 'vote__side-box';
 
+
+  var loadIfm = once(function () {
     return document.getElementById('rightArea').append(iframe);
   });
 
