@@ -23,7 +23,7 @@ window.onload = function () {
     console.log('set===');
     window.onmessage = function (e) {
       console.log(e.data);
-      iii.height = e.data;
+      iii.height = +e.data + 100;
     };
     
     iii.contentWindow.postMessage('', '*');
