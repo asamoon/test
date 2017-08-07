@@ -8,20 +8,38 @@
 <div id="rightArea"><h1>rightArea</h1></div>
 
 <script>
-window.onload = function() {
-  var iframe = document.createElement('iframe');
-  // iframe.style.display = "none";
-  iframe.src = 'https://vote.yam.com/inset';
-  iframe.frameBorder = 0;
-  iframe.scrolling = 'no';
-  iframe.id = 'vote__side-box';
-  document.getElementById('rightArea').append(iframe);
+function once(fn) {
+  var promise;
+  return function () {
+    var args;
+      if (!promise) {
+        args = Array.prototype.slice.call(arguments);
+        promise = Promise.resolve(fn.apply(null, args));
+      }
+    return promise;
+  };
+}
 
-  window.onmessage = function(e) {
-    console.log(e.data);
-    iframe.height = e.data
-  }
-  iframe.contentWindow.postMessage('','*');
+
+window.onload = function() {
+  var loadIfm = once(function () {
+    var iframe = document.createElement('iframe');
+    iframe.src = 'https://vote.yam.com/inset';
+    iframe.frameBorder = 0;
+    iframe.scrolling = 'no';
+    iframe.id = 'vote__side-box';
+
+    return document.getElementById('rightArea').append(iframe);
+  });
+
+
+  loadIfm().then(function () {
+    window.onmessage = function(e) {
+      console.log(e.data);
+      iframe.height = e.data
+    }
+    iframe.contentWindow.postMessage('', '*');
+  });
 };
 </script>
 
