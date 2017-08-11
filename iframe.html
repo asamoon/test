@@ -10,7 +10,7 @@
 <script>
 window.onload = function () {
   var iframe = document.createElement('iframe');
-  iframe.style.display = "none";
+  // iframe.style.display = "none";
   // iframe.src = 'https://yampktest.azurewebsites.net/inset/';
   iframe.src = 'https://vote.yam.com/inset/';
   iframe.frameBorder = 0;
@@ -24,7 +24,6 @@ window.onload = function () {
     console.log('set===');
     window.onmessage = function (e) {
       console.log(e.data);
-      iii.style.display = "block";
       iii.height = +e.data;
     };
     
